@@ -20,19 +20,14 @@ import java.util.concurrent.ExecutionException;
 
 public class DatabaseUtil {
     private final static Logger LOGGER = LoggerFactory.getLogger(DatabaseUtil.class);
-
-    /*private static final String DRIVER = "com.mysql.jdbc.Driver";
-    private static final String URL = "jdbc:mysql://192.168.100.56:22767/swingcard?useUnicode=true&characterEncoding=utf8";
-    private static final String USERNAME = "root";
-    private static final String PASSWORD = "1a2s3d$f";
-    private static final String DATABASE = "swingcard";*/
+    
     private static final String DRIVER = "com.mysql.jdbc.Driver";
-    private static final String URL = "jdbc:mysql://47.110.244.88:3307/smart_planet?useUnicode=true&characterEncoding=utf-8&autoReconnect=true&rewriteBatchedStatements=TRUE&allowMultiQueries=true";
+    private static final String URL = "jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf-8&autoReconnect=true&rewriteBatchedStatements=TRUE&allowMultiQueries=true";
     private static final String USERNAME = "root";
-    private static final String PASSWORD = "'planet++520'";
-    private static final String DATABASE = "smart_planet";
+    private static final String PASSWORD = "";
+    private static final String DATABASE = "";
 
-    private static final String SQL = "SELECT * FROM ";// 数据库操作
+    private static final String SQL = "SELECT * FROM ";
     private static final String getTableInfoSql = "SELECT isc.COLUMN_NAME,isc.ORDINAL_POSITION,isc.COLUMN_DEFAULT,isc.IS_NULLABLE,isc.DATA_TYPE,isc.COLUMN_TYPE,isc.COLUMN_KEY,isc.COLUMN_COMMENT from information_schema.COLUMNS isc where table_schema = '"+DatabaseUtil.DATABASE+"' and table_name = ?";
     private static final String getTableCommentSql = "show table STATUS where Name =?";
 
